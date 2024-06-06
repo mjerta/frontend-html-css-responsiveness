@@ -12,9 +12,35 @@ Table of Contents:
     1. Global Styles
 ////////////////////////*/
 
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mobile-background: #F9C48B;
+  --small-screenbackground: #F69051;
+  --standard-screen-background: #F26D40;
+  --color-four: #260803;
+  --color-article: #FDEFEC;
+
+
+  /*  spacing*/
+  --default-spacing: 1.5rem;
+
+  /*  border-corners*/
+  --default-corner: .4rem;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  background-color: var(--mobile-background);
 }
 
 /*////////////////////////
@@ -22,14 +48,61 @@ body {
 ////////////////////////*/
 
 
-
 /*////////////////////////
     3. Areas
 ////////////////////////*/
 
+.article {
+  background-color: var(--color-article);
+  padding: var(--default-spacing);
+  margin: var(--default-spacing);
+  border-radius: var(--default-corner);
 
+  & h2, p, img {
+    margin-bottom: var(--default-spacing);
+  }
+
+  & .responsive-image {
+    width: 100%;
+    border-radius: var(--default-corner);
+  }
+}
 
 
 /*////////////////////////
     2. Media Queries
 ////////////////////////*/
+
+@media screen and (min-width: 576px) {
+  /*font-size: ;*/
+
+}
+
+/*tablet*/
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    background-color: var(--small-screenbackground)
+  }
+}
+
+/*desktop*/
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/*standard screen*/
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 22px;
+  }
+
+  body {
+    background-color: var(--standard-screen-background);
+  }
+}
